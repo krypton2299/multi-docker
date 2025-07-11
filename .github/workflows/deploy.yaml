@@ -10,15 +10,15 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
-      - run: docker build -t vishalsair/react-test -f ./client/Dockerfile.dev ./client
-      - run: docker run -e CI=true vishalsair/react-test npm test
+      - run: docker build -t madara2906/react-test -f ./client/Dockerfile.dev ./client
+      - run: docker run -e CI=true madara2906/react-test npm test
 
-      - run: docker build -t vishalsair/multi-client ./client
-      - run: docker build -t vishalsair/multi-nginx ./nginx
-      - run: docker build -t vishalsair/multi-server ./server
-      - run: docker build -t vishalsair/multi-worker ./worker
+      - run: docker build -t madara2906/multi-client ./client
+      - run: docker build -t madara2906/multi-nginx ./nginx
+      - run: docker build -t madara2906/multi-server ./server
+      - run: docker build -t madara2906/multi-worker ./worker
 
-      - run: docker push vishalsair/multi-client
-      - run: docker push vishalsair/multi-nginx
-      - run: docker push vishalsair/multi-server
-      - run: docker push vishalsair/multi-worker
+      - run: docker push madara2906/multi-client
+      - run: docker push madara2906/multi-nginx
+      - run: docker push madara2906/multi-server
+      - run: docker push madara2906/multi-worker
